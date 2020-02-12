@@ -8,8 +8,10 @@ const UserDiv = styled.div`
   justify-content: center;
   margin-bottom: 20px;
   align-content: center;
+  width: 300px;
+height:400px;
 
-  padding: 20px;
+  
 
   align-items: center;
   text-align: center;
@@ -19,8 +21,7 @@ const UserDiv = styled.div`
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin: 30px;
-  width: 300px;
-  height: 350px;
+
   background: lightblue;
 `
 
@@ -37,7 +38,7 @@ box-shadow: 0 1px 6px -2px #000;
 background-color: #FFF;
 margin: 30px;
 width: 300px;
-height: 350px;
+height:400px;
 background: lightblue;
 
 `;
@@ -49,6 +50,7 @@ const FollowerTopDiv = styled.div`
   margin-bottom: 20px;
   align-items: center;
   max-width: 100%;
+  flex-wrap: wrap;
 
 
 `;
@@ -60,6 +62,7 @@ const UserTopDiv = styled.div`
   margin-bottom: 30px;
   align-items: center;
   max-width: 100%;
+  
 
 
 
@@ -72,10 +75,10 @@ const UserImage = styled.img`
   flex-shrink: 2;
 `;
 
-const wrapperDiv = styled.div`
+const WrapperDiv = styled.div`
 
   width: 1000px;
-  margin: 50px auto;
+  margin: 0px auto;
   padding: 30px;
   display: flex;
   flex-direction: column;
@@ -92,7 +95,7 @@ function UserCard (props) {
   console.log("props followers", props.followers)
   
     return (
-      <wrapperDiv>
+      <WrapperDiv>
         <UserTopDiv>
         {props.userData.map(data => (
           <UserDiv key={data.id}>
@@ -115,7 +118,7 @@ function UserCard (props) {
           </FollowerCardDiv>
         ))}
         </FollowerTopDiv>
-      </wrapperDiv>
+      </WrapperDiv>
     );
 }
 
