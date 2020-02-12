@@ -8,7 +8,8 @@ class App extends React.Component {
     userData: [],
     followersList:[],
     username:'caw442000',
-    followersData:[]
+    followersData:[],
+    user:'',
 
 
   };
@@ -19,7 +20,8 @@ class App extends React.Component {
       .then(res => {
         console.log("this is the original username response", res)
         this.setState({
-          userData: [res.data]
+          userData: [res.data],
+          user:res.data.name
         });
         console.log("this is the User Data", this.state.userData)
       })
@@ -60,8 +62,8 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <h1>Github User Card</h1>
-        <UserCard followers= {this.state.followersData} userData={this.state.userData} />
+        <h1>Github User {this.state.user}</h1>
+        <UserCard followers= {this.state.followersData} userData={this.state.userData} user={this.state.user}/>
       </div>
     );
   }
